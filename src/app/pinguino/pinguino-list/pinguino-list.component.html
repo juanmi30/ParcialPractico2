@@ -1,11 +1,5 @@
 
   <div class="row row-cols-6">
-    <div class="col">
-      <div *ngIf="selected">
-        <app-pinguino-detail
-        [pinguinoDetail]="selectedEspecie"
-        ></app-pinguino-detail>
-      </div>
     <table
       class="col table table-striped table-bordered w-auto"
       style="width: 50%; height: 50%"
@@ -34,5 +28,11 @@
       </tbody>
       <!-- <p>La especie con mayor distribución mundial es: {{ mayor_especie.name }}</p> -->
     </table>
+    <div class="col">
+      <div *ngIf="selected">
+        <app-pinguino-detail
+        [pinguinoDetail]="selectedEspecie"
+        ></app-pinguino-detail>
+      </div>
   </div>
 </div>
