@@ -1,0 +1,38 @@
+
+  <div class="row row-cols-6">
+    <div class="col">
+      <div *ngIf="selected">
+        <app-pinguino-detail
+        [pinguinoDetail]="selectedEspecie"
+        ></app-pinguino-detail>
+      </div>
+    <table
+      class="col table table-striped table-bordered w-auto"
+      style="width: 50%; height: 50%"
+    >
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Nombre</th>
+          <th scope="col">Nombre científico</th>
+          <th scope="col">Alimentación</th>
+          <th scope="col">Distribución mundial</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let s of especies">
+        <td>
+          <a (click)="onSelected(s)">{{ s.name }}</a>
+        </td>
+        <td>
+          <dd>{{ s.scientific_name }}</dd>
+        </td>
+        <td>
+          <dd>{{ s.feeding }}</dd>
+        </td>
+        <td>
+          <dd>{{ s.global_distribution }}</dd>
+        </td>
+      </tbody>
+      <!-- <p>La especie con mayor distribución mundial es: {{ mayor_especie.name }}</p> -->
+    </table>
+  </div>
+</div>
