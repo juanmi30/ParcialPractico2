@@ -23,27 +23,27 @@ export class PinguinoListComponent implements OnInit {
   getEspecies(): void {
     this.pinguinoService.getEspecies().subscribe((especies) => {
       this.especies = especies;
+      this.mayor_especie = especies[0];
     });
   }
 
-  // getMayorEspecie(especies: Pinguino[]) {
-  //   let num_paises: number = 0;
-  //   let array: Array<string> = [];
-  //   let pinguino!: Pinguino;
-  //   especies.forEach((especie) => {
-  //     let temp = 0;
-  //     array = especie.global_distribution.split(',');
-  //     temp = array.length;
-  //     if (temp > num_paises) {
-  //       num_paises = temp;
-  //       pinguino = especie;
-  //     }
-  //   });
-  //   this.mayor_especie = pinguino;
-  // }
+  getMayorEspecie(especies: Pinguino[]) {
+    let num_paises: number = 0;
+    let array: Array<string> = [];
+    especies.forEach((especie) => {
+      this.mayor_especie = especie;
+      let temp = 0;
+      array = especie.global_distribution.split(',');
+      temp = array.length;
+      if (temp > num_paises) {
+        num_paises = temp;
+        this.mayor_especie = especie;
+      }
+    });
+  }
 
   ngOnInit(): void {
     this.getEspecies();
-    //this.getMayorEspecie(this.especies);
+    this.getMayorEspecie(this.especies);
   }
 }

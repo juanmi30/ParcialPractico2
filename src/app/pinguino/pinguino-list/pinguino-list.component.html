@@ -26,8 +26,9 @@
           <dd>{{ s.global_distribution }}</dd>
         </td>
       </tbody>
-      <!-- <p>La especie con mayor distribución mundial es: {{ mayor_especie.name }}</p> -->
+      
     </table>
+    <p>La especie con mayor distribución mundial es: {{ mayor_especie.name }}</p>
     <div class="col">
       <div *ngIf="selected">
         <app-pinguino-detail
